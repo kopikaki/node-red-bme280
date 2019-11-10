@@ -1,0 +1,109 @@
+[
+    {
+        "id": "3c8e77c2.aa1308",
+        "type": "tab",
+        "label": "BME280",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f465bdc3.73b6a",
+        "type": "inject",
+        "z": "3c8e77c2.aa1308",
+        "name": "Time Interval to read BME280",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 160,
+        "y": 40,
+        "wires": [
+            [
+                "df7ae47c.07aa38"
+            ]
+        ]
+    },
+    {
+        "id": "df7ae47c.07aa38",
+        "type": "Bme280",
+        "z": "3c8e77c2.aa1308",
+        "name": "",
+        "bus": "1",
+        "address": "0x77",
+        "topic": "bme280",
+        "extra": false,
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "a6e948b6.dad2b8",
+                "434f256b.749b9c"
+            ]
+        ]
+    },
+    {
+        "id": "a6e948b6.dad2b8",
+        "type": "debug",
+        "z": "3c8e77c2.aa1308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 430,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "434f256b.749b9c",
+        "type": "http request",
+        "z": "3c8e77c2.aa1308",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "https://dbtest01.s1.zetez.com/node/bme280",
+        "tls": "e02d76f.71a3988",
+        "proxy": "",
+        "authType": "basic",
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "48e851dd.9b797"
+            ]
+        ]
+    },
+    {
+        "id": "48e851dd.9b797",
+        "type": "debug",
+        "z": "3c8e77c2.aa1308",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e02d76f.71a3988",
+        "type": "tls-config",
+        "z": "",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true
+    }
+]
