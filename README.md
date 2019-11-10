@@ -10,4 +10,6 @@ Node-Red flow to read from BME280 environmental sensor and send data to Nooode A
 
 4. Set Time Interval to read BME280.
 
+5. Refer to screen below, if you see the response from API server, the connection to API is successful. 
+![Alt text](bme280-debug-screen.png?raw=true "Setup")
 
